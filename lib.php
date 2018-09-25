@@ -24,6 +24,12 @@ function local_myplugin_extend_navigation(global_navigation $navigation) {
 	if ($currentcourse = $navigation->find('currentcourse', global_navigation::TYPE_ROOTNODE)) {
 		$currentcourse->forceopen = false;
 	}
+        if ($mycourses = $navigation->find('mycourses', global_navigation::TYPE_ROOTNODE)) {
+                $mycourses->forceopen = false;
+        }
+        if ($courses = $navigation->find('courses', global_navigation::TYPE_ROOTNODE)) {
+                $courses->forceopen = false;
+        }
 	if(user_can_create_courses()){
 	$idCategorie = 1;
 	$idCategorie = get_first_categorie_to_create();
