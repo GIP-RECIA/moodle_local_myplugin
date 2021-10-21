@@ -1,7 +1,8 @@
 <?php
-require_once($CFG->dirroot.'/lib/coursecatlib.php');
+use core_course_category;
+
 function get_first_categorie_to_create(){ 
-   $categories = coursecat::get(0)->get_children(array('sort' => array('id' => 1)));
+   $categories = core_course_category::get(0)->get_children(array('sort' => array('id' => 1)));
 	        
    foreach ($categories as $category) {
         if (has_capability('moodle/course:create', $category->get_context())){
