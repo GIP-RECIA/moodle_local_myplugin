@@ -1,5 +1,4 @@
 <?php
-use core_course_category;
 
 function get_first_categorie_to_create(){ 
    $categories = core_course_category::get(0)->get_children(array('sort' => array('id' => 1)));
